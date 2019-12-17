@@ -1,9 +1,9 @@
 import React from 'react';
 
-function BrowseRecipes() {
+function SuggestedRecipes() {
     return(
         <div>
-            <h1>BROWSE RECIPES</h1>
+            <h1>SUGGESTED RECIPES</h1>
             <p>Photo : Random Recipe</p>
             <p>Photo : Random Recipe</p>
             <p>Photo : Random Recipe</p>
@@ -12,4 +12,4 @@ function BrowseRecipes() {
     )
 }
 
-export default BrowseRecipes;
+export default SuggestedRecipes;
