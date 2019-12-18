@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ShowIngredients from '../components/ShowIngredients';
+import SearchNewRecipe from '../components/SearchNewRecipe';
 
 function NewRecipe() {
     const [ingredient, setIngredient] = useState('')
@@ -17,14 +18,18 @@ function NewRecipe() {
     return(
         <div>
             <h1>NEW RECIPE</h1>
-            <label>Enter Ingredients:</label>
+            <label>What's in your fridge? </label>
             <input onChange={(e) => setIngredient(e.target.value)}></input>
             <button onClick={(e) => addToList()}>Enter</button>
             <hr/>
-            <p>Ingredients</p>
+            <p>INGREDIENTS</p>
             <ShowIngredients ingredientsList={ingredientsList}/>
+            <button>Search Recipes</button>
+            <button onClick={(e) => clearList()}>Clear Ingredients</button>
             <hr/>
             <p>RECIPES</p>
+            <SearchNewRecipe ingredientsList={ingredientsList}/>
+            <p>will populate from API (search recipes onClick)</p>
             <p>Photo : Recipe</p>
             <p>Photo : Recipe</p>
             <p>Photo : Recipe</p>
