@@ -1,16 +1,40 @@
 import React, {useState} from 'react';
 
 function Home() {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    async function saveUser() {
+        try {
+            const endpoint = 'http://localhost:5000/api/saveUser';
+            const data = {
+            username: username,
+            password: password
+            // token: sessionStorage.getItem(token)
+            }
+            const configs = {
+            method: 'POST',
+            body: JSON.stringify(data), 
+            mode: 'cors',
+            headers: {'Content-type' : 'application/json'}
+            }
+            const res = await fetch(endpoint, configs);
+            const json_res = await res.json();
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
 
     return(
         <div>
             <h1>WELCOME</h1>
+            <p>Sign up / Log in</p>
             <label>Username: </label>
-            <input></input>
+            <input onChange={(e)=>setUsername(e.target.value)}></input>
             <label>Password: </label>
-            <input></input>
-            <button>Log In</button>
-            
+            <input onChange={(e)=>setPassword(e.target.value)}></input>
+            <button onClick={(e)=> saveUser()}>Submit</button>
         </div>
     )
 }
