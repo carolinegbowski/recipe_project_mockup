@@ -1,12 +1,9 @@
 import React from 'react';
 
 function ShowRecipes(props) {
-    let recipeData = props.recipeData;
-    console.log(recipeData)
-    const recipes = recipeData.map(recipeDict =>( 
-        <p>{recipeDict.image} {recipeDict.title}</p>
+    const recipes = props.recipeData.map(recipeDict =>( 
+        <p><img src={recipeDict.image}/> <p>{recipeDict.title}</p></p>
     ))
-
     return(
         <div>
             {recipes}

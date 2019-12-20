@@ -6,7 +6,7 @@ import ShowRecipes from '../components/ShowRecipes';
 function NewRecipe() {
     const [ingredient, setIngredient] = useState('')
     const [ingredientsList, setIngredientsList] = useState([])
-    const [recipeData, setRecipeData] = useState({})
+    const [recipeData, setRecipeData] = useState([])
 
     function addToList() {
         let newIngredient = ingredient
@@ -45,8 +45,11 @@ function NewRecipe() {
                 }
                 const res = await fetch(endpoint, configs);
                 const json_res = await res.json();
+                console.log("raw json: ")
                 console.log(json_res)
                 setRecipeData(json_res['data']['results'])
+
+                // console.log("hard coded" + json_res['data']['results'])
                 console.log(recipeData)
             //   if (json_res.status === "success") {
             //     console.log("success")
@@ -74,15 +77,7 @@ function NewRecipe() {
             <button onClick={(e) => clearList()}>Clear Ingredients</button>
             <hr/>
             <p>RECIPES</p>
-            {/* <ShowRecipes recipeData={recipeData}/> */}
-            <p>will populate from API (search recipes onClick) / will likely put this in new component</p>
-            
-            <p>Photo : Recipe</p>
-            <p>Photo : Recipe</p>
-            <p>Photo : Recipe</p>
-            <p>Photo : Recipe</p>
-
-
+            <ShowRecipes recipeData={recipeData}/>
         </div>
     )
 }
