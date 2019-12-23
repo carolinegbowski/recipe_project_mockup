@@ -43,16 +43,12 @@ function SearchNewRecipe(props) {
            console.log(err);
         }
     }
-// need to use API call here & return summary of results 
-// Title, Image, 
-// can either send request to flask... flask sends request to API
-// OR can 
     return (
-        <div>
-            {getRecipes}
-        </div>
+        // <div>
+        //     {getRecipes}
+        // </div>
     
-    // <ShowRecipes recipeData={getRecipes}/>
+    <ShowRecipes recipeData={getRecipes}/>
     )
 }
 
