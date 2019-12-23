@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ViewRecipe from './ViewRecipe';
+import OneRecipe from './OneRecipe';
 
 function ShowRecipes(props) { 
     const [currentRecipeID, setCurrentRecipeID] = useState('')
@@ -14,11 +14,9 @@ function ShowRecipes(props) {
     
     return(
         <div>
-            {currentRecipeID ? <ViewRecipe recipeID={currentRecipeID}/> : recipes}
+            {currentRecipeID ? <OneRecipe recipeID={currentRecipeID}/> : recipes}
+
         </div>
-        // <div>
-        //     {recipes}
-        // </div>
     )
 }
 
