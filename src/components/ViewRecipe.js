@@ -1,4 +1,4 @@
-// CAN DELETE THIS COMPONENT
+// CAN DELETE THIS
 
 import React from 'react';
 
