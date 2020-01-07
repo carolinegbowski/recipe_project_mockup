@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Heading, Button, Card, Flex, Box } from 'rebass';
 import { Label, Input } from '@rebass/forms'; 
 
-function LogIn() {
+function LogIn(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -12,7 +12,6 @@ function LogIn() {
             const data = {
             username: username,
             password: password
-            // token: sessionStorage.getItem(token)
             }
             const configs = {
             method: 'POST',
@@ -22,6 +21,10 @@ function LogIn() {
             }
             const res = await fetch(endpoint, configs);
             const json_res = await res.json();
+            if (json_res.token) {
+                sessionStorage.setItem("token", json_res.token)
+                props.setToken(json_res.token)
+            }
         } catch (err) {
             console.log(err)
         } 

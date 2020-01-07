@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Box, Flex, Heading, Button } from 'rebass';
 import { Input } from '@rebass/forms'; 
 
-function SignUp() {
+function SignUp(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -12,7 +12,6 @@ function SignUp() {
             const data = {
             username: username,
             password: password
-            // token: sessionStorage.getItem(token)
             }
             const configs = {
             method: 'POST',
@@ -22,6 +21,9 @@ function SignUp() {
             }
             const res = await fetch(endpoint, configs);
             const json_res = await res.json();
+            if (json_res.token) {
+                props.setNewUser(false)
+            }
         } catch (err) {
             console.log(err)
         }

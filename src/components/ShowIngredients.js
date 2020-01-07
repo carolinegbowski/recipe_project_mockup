@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from 'rebass';
 
 function ShowIngredients(props) {
     let iList = props.ingredientsList
@@ -7,7 +8,10 @@ function ShowIngredients(props) {
     ))
     return (
         <div>
-            { myIngredients }
+            <Card>
+                { myIngredients }
+            </Card>
+            
         </div>
     )
 }

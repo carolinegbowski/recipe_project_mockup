@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Heading, Card, Button } from 'rebass';
+import { Heading, Card, Button, Box } from 'rebass';
 
 function OneRecipe(props) {
     const [myIngredientsResponse, setMyIngredientsResponse] = useState({})
@@ -67,15 +67,21 @@ function OneRecipe(props) {
     return(
         <div>
             <p>{props.recipeImage}</p>
-            <Card>
-                <Heading>Ingredients</Heading>
-                <p>{ingredients}</p>
-            </Card>
-            <Card>
-                <Heading>Instructions:</Heading>
-                <p>{instructions}</p>
-            </Card>
-            <Button my={'10px'} backgroundColor={'#DD9086'} color={'white'}>Save Recipe</Button>
+            <Box>
+                <Card textAlign={'left'} contentAlign={'center'}>
+                    <Heading textAlign={'center'}>Ingredients</Heading>
+                    <Box width={'200px'} contentAlign={'center'}>
+                        <p>{ingredients}</p>
+                    </Box>
+                </Card>
+                <Card textAlign={'left'}>
+                    <Heading textAlign={'center'}>Instructions</Heading>
+                    <p>{instructions}</p>
+                </Card>
+                <Button contentAlign={'center'} my={'10px'} backgroundColor={'#DD9086'} color={'white'}>Save Recipe</Button>
+            </Box>
+            
+            
 
         </div>
     )
