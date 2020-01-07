@@ -1,9 +1,10 @@
 import React from 'react';
+import { Heading } from 'rebass';
 
 function MyAccount() {
     return(
         <div>
-            <h1>MY ACCOUNT</h1>
+            <Heading fontFamily={'Roboto'} fontSize={'50px'}>MY ACCOUNT</Heading>
             <p>Name: </p>
             <p>Username: </p>
             <p>Password: ******</p>

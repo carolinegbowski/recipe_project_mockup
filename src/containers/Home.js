@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Heading } from 'rebass';
 
 function Home() {
     const [username, setUsername] = useState('')
@@ -28,7 +29,7 @@ function Home() {
 
     return(
         <div>
-            <h1>WELCOME</h1>
+            <Heading fontFamily={'Roboto'} fontSize={'50px'}>WELCOME</Heading>
             <p>Sign up / Log in</p>
             <label>Username: </label>
             <input onChange={(e)=>setUsername(e.target.value)}></input>
