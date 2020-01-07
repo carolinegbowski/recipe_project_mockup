@@ -68,21 +68,21 @@ function NewRecipe() {
 
     return(
         <div>
-            <Heading mb={'20px'}>NEW RECIPE</Heading>
+            <Heading mt={'20px'} mb={'20px'}>NEW RECIPE</Heading>
             <label>What's in your fridge? </label>
             <Flex>
-                <Box width={3/7}></Box>
-                <Input mt={'10px'}width={1/7} onChange={(e) => setIngredient(e.target.value)}></Input>
-                <Box width={3/7}></Box>
+                <Box width={2/7}></Box>
+                <Input mt={'10px'}width={3/7} onChange={(e) => setIngredient(e.target.value)}></Input>
+                <Box width={2/7}></Box>
             </Flex>
-            <Button my={'10px'} backgroundColor={'blue'} color={'white'} onClick={(e) => addToList()}>Enter</Button>
+            <Button my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => addToList()}>Enter Ingredient</Button>
             <Flex>
                 <Box width={1/17}></Box>
                 <Card width={7/17}>
                     <Heading my={'20px'}>Ingredients</Heading>
                     <ShowIngredients ingredientsList={ingredientsList}/>
-                    <Button m={'10px'} backgroundColor={'blue'} color={'white'} onClick={(e) => searchNewRecipe()}>Search Recipes</Button>
-                    <Button m={'10px'} backgroundColor={'blue'} color={'white'} onClick={(e) => clearList()}>Clear Ingredients</Button>
+                    <Button width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => searchNewRecipe()}>Search</Button>
+                    <Button width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => clearList()}>Clear</Button>
                 </Card>
                 <Box width={1/17}></Box>
                 <Card width= {7/17}>
