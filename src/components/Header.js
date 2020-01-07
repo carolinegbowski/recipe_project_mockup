@@ -8,23 +8,21 @@ const Header = () => {
     return( 
         <div>
             <div class="header-bar">
-                <Flex my={'30px'}>
-                    <Heading color={'#DD9086'} width={1/7}>Logo</Heading>
-                    <Box width={2/7}></Box>
-                    <Heading color={'#DD9086'} width={1/7}>C O M P A N Y</Heading>
-                    <Box width={2/7}></Box>
-                    <Heading color={'#DD9086'} width={1/7}>User Logo</Heading>
+                <Flex py={'30px'}>
+                    <Heading fontSize={'14px'} fontFamily={'Roboto'} color={'#DD9086'} width={1/7}>LOGO</Heading>
+                    <Box width={1/7}></Box>
+                    <Heading fontFamily={'Roboto'} fontWeight={'bold'} color={'#DD9086'} width={3/7}>M A R S H M A L L O W</Heading>
+                    <Box width={1/7}></Box>
+                    <Heading fontSize={'14px'} fontFamily={'Roboto'} color={'#DD9086'} width={1/7}>USER LOGO</Heading>
                 </Flex>
-                <hr/>
             </div>
             <div class="links">
-                <Link to='/home'>Home</Link>
-                <Link to='/myAccount'>My Account</Link>
-                <Link to='/myRecipes'>My Recipes</Link>
-                <Link to='/newRecipe'>New Recipe</Link>
-                <Link to='/suggestedRecipes'>Suggested Recipes</Link>
+                <Link to='/home'>HOME</Link>
+                <Link to='/myAccount'>MY ACCOUNT</Link>
+                <Link to='/myRecipes'>MY RECIPES</Link>
+                <Link to='/newRecipe'>NEW RECIPE</Link>
+                <Link to='/suggestedRecipes'>SUGGESTED RECIPES</Link>
             </div>
-            <hr/>
         </div>
     )
 }
