@@ -4,7 +4,7 @@ import { Heading } from 'rebass';
 function MyRecipes() {
     return(
         <div>
-            <Heading fontFamily={'Roboto'} fontSize={'50px'}>MY RECIPES</Heading>
+            <Heading fontFamily={'Roboto'} fontSize={'50px'} mt={'20px'}>MY RECIPES</Heading>
             <p>Photo : Recipe</p>
             <p>Photo : Recipe</p>
             <p>Photo : Recipe</p>

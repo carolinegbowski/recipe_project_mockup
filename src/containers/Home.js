@@ -1,41 +1,21 @@
 import React, {useState} from 'react';
-import { Heading } from 'rebass';
+import { Heading, Button } from 'rebass';
+import LogIn from '../components/LogIn';
+import SignUp from '../components/SignUp';
 
 function Home() {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-
-    async function saveUser() {
-        try {
-            const endpoint = 'http://localhost:5000/api/saveUser';
-            const data = {
-            username: username,
-            password: password
-            // token: sessionStorage.getItem(token)
-            }
-            const configs = {
-            method: 'POST',
-            body: JSON.stringify(data), 
-            mode: 'cors',
-            headers: {'Content-type' : 'application/json'}
-            }
-            const res = await fetch(endpoint, configs);
-            const json_res = await res.json();
-        } catch (err) {
-            console.log(err)
-        }
-    }
+    // const [username, setUsername] = useState('')
+    // const [password, setPassword] = useState('')
+    const [newUser, setNewUser] = useState(true)
 
 
     return(
         <div>
-            <Heading fontFamily={'Roboto'} fontSize={'50px'}>WELCOME</Heading>
-            <p>Sign up / Log in</p>
-            <label>Username: </label>
-            <input onChange={(e)=>setUsername(e.target.value)}></input>
-            <label>Password: </label>
-            <input onChange={(e)=>setPassword(e.target.value)}></input>
-            <button onClick={(e)=> saveUser()}>Submit</button>
+            {/* {loggedIn ? <UserHomePage/> : <SignUpLogIn/>} */}
+            <Heading fontFamily={'Roboto'} fontSize={'50px'} mt={'20px'} >WELCOME</Heading>
+            <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> setNewUser(true)}>Sign Up</Button>
+            <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> setNewUser(false)}>Log In</Button>
+            {newUser ? <SignUp/> : <LogIn/>}
         </div>
     )
 }
