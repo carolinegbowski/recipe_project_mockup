@@ -21,10 +21,16 @@ function LogIn(props) {
             }
             const res = await fetch(endpoint, configs);
             const json_res = await res.json();
-            if (json_res.token) {
-                sessionStorage.setItem("token", json_res.token)
-                props.setToken(json_res.token)
+            if (json_res) {
+                sessionStorage.setItem("token", json_res[1])
+                sessionStorage.setItem("id", json_res[0])
+                props.setToken(json_res[1])
             }
+            // if (json_res.token) {
+            //     sessionStorage.setItem("token", json_res.token)
+            //     sessionStorage.setItem("id", json_res.id)
+            //     props.setToken(json_res.token)
+            // }
         } catch (err) {
             console.log(err)
         } 
