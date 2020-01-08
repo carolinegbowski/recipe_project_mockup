@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Heading, Card, Button, Box } from 'rebass';
+import { Heading, Card, Button, Box, Image } from 'rebass';
 
 function OneRecipe(props) {
     const [myIngredientsResponse, setMyIngredientsResponse] = useState({})
@@ -64,10 +64,37 @@ function OneRecipe(props) {
         getInstructions()
     }
     
+
+
+    // async function saveRecipe() {
+    //     recipeID = props.recipeID
+    //     try {
+    //         const endpoint = 'http://localhost:5000/api/saveRecipe';
+    //         const data = {
+    //             id : props.recipeID, 
+    //             title : props.title, 
+    //             image : props.image
+    //         }
+    //         const configs = {
+    //             method: 'POST',
+    //             body: JSON.stringify(data),
+    //             mode: 'cors',
+    //             headers: {'Content-type' : 'application/json'}
+    //         }
+    //         const res = await fetch(endpoint, configs);
+    //         const json_res = await res.json();
+    //         setMyInstructionsResponse(json_res)
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+
     return(
         <div>
-            <p>{props.recipeImage}</p>
+            <Heading>{ props.recipeTitle }</Heading>
+            <Image src={ props.recipeImage }></Image>
             <Box>
+                
                 <Card textAlign={'left'} contentAlign={'center'}>
                     <Heading textAlign={'center'}>Ingredients</Heading>
                     <Box width={'200px'} contentAlign={'center'}>
@@ -78,7 +105,8 @@ function OneRecipe(props) {
                     <Heading textAlign={'center'}>Instructions</Heading>
                     <p>{instructions}</p>
                 </Card>
-                <Button contentAlign={'center'} my={'10px'} backgroundColor={'#DD9086'} color={'white'}>Save Recipe</Button>
+                <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} >Save Recipe</Button>
+                <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
             </Box>
             
             
