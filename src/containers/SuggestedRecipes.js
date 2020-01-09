@@ -1,36 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Heading } from 'rebass';
+import ShowSuggestedRecipes from '../components/ShowSuggestedRecipes'
 
 function SuggestedRecipes() {
+    const [recipeData, setRecipeData] = useState([])
     
 
-    // async function popularRecipes() {
-    //     try {
-    //         const endpoint = 'http://localhost:5000/api/popularRecipes';
-    //         const data = {
-    //         // ingredients: iString,
-    //         // number: 5
-    //         }
-    //         const configs = {
-    //         method: 'POST',
-    //         body: JSON.stringify(data), 
-    //         mode: 'cors',
-    //         headers: {'Content-type' : 'application/json'}
-    //         }
-    //         const res = await fetch(endpoint, configs);
-    //         const json_res = await res.json();
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // }
+    async function popularRecipes() {
+        try {
+            const endpoint = 'http://localhost:5000/api/popularRecipes';
+            const data = {
+            number: 15
+            }
+            const configs = {
+            method: 'POST',
+            body: JSON.stringify(data), 
+            mode: 'cors',
+            headers: {'Content-type' : 'application/json'}
+            }
+            const res = await fetch(endpoint, configs);
+            const json_res = await res.json();
+            setRecipeData(json_res['data']['recipes'])
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    if (recipeData.length === 0) {
+        popularRecipes()
+    }
 
     return(
         <div>
             <Heading fontFamily={'Roboto'} fontSize={'50px'} mt={'20px'} >SUGGESTED RECIPES</Heading>
-            <p>Photo : Random Recipe</p>
-            <p>Photo : Random Recipe</p>
-            <p>Photo : Random Recipe</p>
-            <p>Photo : Random Recipe</p>
+            <ShowSuggestedRecipes recipeData={recipeData}/>
         </div>
     )
 }

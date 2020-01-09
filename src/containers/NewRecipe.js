@@ -50,14 +50,6 @@ function NewRecipe() {
                 console.log("raw json: ")
                 console.log(json_res)
                 setRecipeData(json_res['data']['results'])
-
-                // console.log("hard coded" + json_res['data']['results'])
-                console.log(recipeData)
-            //   if (json_res.status === "success") {
-            //     console.log("success")
-            //   } else {
-            //     console.log("SQL ERROR")
-            //   }
             } catch (err) {
                 console.log(err);
             }
