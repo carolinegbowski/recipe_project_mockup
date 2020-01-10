@@ -39,7 +39,7 @@ function MyRecipes() {
 
     return(
         <div>
-            <Heading fontFamily={'Roboto'} fontSize={'50px'} mt={'20px'}>MY RECIPES</Heading>
+            <Heading color={'#894532'} fontFamily={'Rubik'} fontWeight={'700'} fontSize={'35px'} my={'50px'}>MY RECIPES</Heading>
             { errorNote ? <p>  { errorNote }  </p> : <ShowMyRecipes recipeData={recipeData}/> }
         </div>
     )

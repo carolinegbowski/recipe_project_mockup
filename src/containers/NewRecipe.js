@@ -60,25 +60,25 @@ function NewRecipe() {
 
     return(
         <div>
-            <Heading fontFamily={'Roboto'} fontSize={'50px'} mt={'20px'} mb={'20px'}>NEW RECIPE</Heading>
+            <Heading color={'#894532'} fontFamily={'Rubik'} fontWeight={'700'} fontSize={'35px'} mt={'50px'} mb={'50px'}>NEW RECIPE</Heading>
             <label>What's in your fridge? </label>
             <Flex>
                 <Box width={2/7}></Box>
                 <Input mt={'10px'}width={3/7} onChange={(e) => setIngredient(e.target.value)}></Input>
                 <Box width={2/7}></Box>
             </Flex>
-            <Button fontFamily={'Roboto'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => addToList()}>Enter Ingredient</Button>
+            <Button fontFamily={'Roboto'} mt={'10px'} mb={'50px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => addToList()}>Enter Ingredient</Button>
             <Flex>
                 <Box width={1/17}></Box>
                 <Card width={7/17}>
-                    <Heading fontFamily={'Roboto'} my={'20px'}>INGREDIENTS</Heading>
+                    <Heading fontFamily={'Rubik'} fontWeight={'500'} my={'20px'}>INGREDIENTS</Heading>
                     <ShowIngredients ingredientsList={ingredientsList}/>
                     <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => searchNewRecipe()}>Search</Button>
                     <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => clearList()}>Clear</Button>
                 </Card>
                 <Box width={1/17}></Box>
                 <Card width= {7/17}>
-                    <Heading fontFamily={'Roboto'} my={'20px'}>RECIPES</Heading>
+                    <Heading fontFamily={'Rubik'} fontWeight={'500'} my={'20px'}>RECIPES</Heading>
                     <ShowRecipes recipeData={recipeData}/>
                 </Card>
                 <Box width={1/17}></Box>

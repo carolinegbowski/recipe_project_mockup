@@ -4,7 +4,7 @@ import { Heading, Flex, Box, Card } from 'rebass';
 function UserHomepage() {
     return(
         <div>
-            <Heading fontFamily={'Roboto'} fontSize={'50px'} mt={'20px'} mb={'20px'}>WELCOME BACK</Heading>
+            <Heading color={'#894532'} fontFamily={'Rubik'} fontWeight={'700'} fontSize={'35px'} my={'50px'}>WELCOME BACK</Heading>
             <Flex alignContent={'center'} textAlign={'center'}>
                 <Card width={1/3} backgroundColor={'#dd9086'} color={'white'}>
                     <Heading fontFamily={'Roboto'} fontSize={'30px'} pt={'100px'} mt={'20px'} mb={'0px'}>My</Heading>

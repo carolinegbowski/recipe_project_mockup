@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Router from './components/Router';
 import Home from './containers/Home';
-
+import Footer from './containers/Footer';
 
 function App() {
   return (

@@ -23,7 +23,7 @@ function ShowSuggestedRecipes(props) {
                 p : "10px",
                 m : "10px",
                 width: "1/5",
-                boxShadow: '0 2px 16px rgba(0, 0, 0, 0.25)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
                 borderRadius: 4
             }}px={'10px'} width={1/5} key={recipeDict.id}>
                 <Image sx={{
@@ -44,7 +44,7 @@ function ShowSuggestedRecipes(props) {
                 </Flex>)
                 : <p></p>
             }
-            <Flex ml={'60px'} flexWrap="wrap" contentAlign={'center'}>
+            <Flex flexWrap="wrap" justifyContent={'center'}>
                 { recipes } 
             </Flex>
         </div>
