@@ -13,26 +13,22 @@ function ShowMyRecipes(props) {
         setCurrentRecipeImage(image)
     }
 
-    console.log(props.recipeData)
-
-    // let recipes
-    // if (props.recipeData.length > 0) {
-    //     recipes = props.recipeData.map(recipeDict => (
-    //         <Card sx={{
-    //             contentAlign: "center",
-    //             p : "10px",
-    //             m : "10px",
-    //             width: "1/5",
-    //             boxShadow: '0 2px 16px rgba(0, 0, 0, 0.25)',
-    //             borderRadius: 4
-    //         }}px={'10px'} width={1/5} key={recipeDict.id}>
-    //             <Image sx={{
-    //                 borderRadius: 4,
-    //             }} src={recipeDict.image} onClick={(e) => SetCurrentRecipeData(recipeDict.id, recipeDict.title, recipeDict.image)}/>
-    //             <p>{ recipeDict.title }</p>
-    //         </Card>
-    //     ))
-    // }
+    console.log("ShowMyRecipes recipeData " + props.recipeData)
+    let recipes = props.recipeData.map(recipeDict => (
+        <Card sx={{
+            contentAlign: "center",
+            p : "10px",
+            m : "10px",
+            width: "1/5",
+            boxShadow: '0 2px 16px rgba(0, 0, 0, 0.25)',
+            borderRadius: 4
+        }}px={'10px'} width={1/5} key={recipeDict.id}>
+            <Image sx={{
+                borderRadius: 4,
+            }} src={recipeDict.image} onClick={(e) => SetCurrentRecipeData(recipeDict.id, recipeDict.title, recipeDict.image)}/>
+            <p>{ recipeDict.title }</p>
+        </Card>
+        ))
     
 
     return(
@@ -45,8 +41,10 @@ function ShowMyRecipes(props) {
                 </Flex>)
                 : <p></p>
             }
+            <Flex flex={'auto'}>
+                {recipes}
+            </Flex>
 
-            <p>ShowMyRecipes</p>
         </div>
     )
 }
