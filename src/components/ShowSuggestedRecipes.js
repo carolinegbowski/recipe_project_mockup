@@ -23,13 +23,17 @@ function ShowSuggestedRecipes(props) {
                 p : "10px",
                 m : "10px",
                 width: "1/5",
+                minHeight: '300px',
                 fontFamily: 'futura',
-                borderStyle: 'solid',
-                borderWidth: '3px',
-                borderColor: '#FD9185'
+                backgroundColor: 'white',
+                color: '#FD9185'
             }}px={'10px'} width={1/5} key={recipeDict.id}>
-                <Image src={recipeDict.image} onClick={(e) => SetCurrentRecipeData(recipeDict.id, recipeDict.title, recipeDict.image)}/>
-                <p>{ recipeDict.title }</p>
+                <Card sx={{ backgroundColor: '#FD9185', p: '3px', minHeight: '300px'}}>
+                    <Card sx={{backgroundColor: 'white', color: '#FD9185', minHeight: '300px', padding: '5px'}}>
+                        <Image p={'5px'} src={recipeDict.image} onClick={(e) => SetCurrentRecipeData(recipeDict.id, recipeDict.title, recipeDict.image)}/>
+                        <p class='recipe-titles'>{ recipeDict.title }</p>
+                    </Card>
+                </Card>
             </Card>
         ))
     }

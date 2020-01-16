@@ -17,7 +17,7 @@ body {
 
 .App {
   text-align: center;
-  background-color: white;
+  background-color: #FD9185;
   height: 2000px;
   
 }
@@ -81,3 +81,4 @@ label {
 .header-bar {
   background-color: white;
 }
+
