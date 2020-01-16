@@ -4,7 +4,7 @@ import { Heading } from 'rebass';
 function MyAccount() {
     return(
         <div>
-            <Heading color={'#894532'} fontFamily={'Rubik'} fontWeight={'700'} fontSize={'35px'} my={'50px'} >MY ACCOUNT</Heading>
+            <Heading color={'#894532'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'35px'} mt={'50px'} mb={'50px'} letterSpacing={'3px'} >MY ACCOUNT</Heading>
             <p>Name: </p>
             <p>Username: </p>
             <p>Password: ******</p>
@@ -13,3 +13,4 @@ function MyAccount() {
 }
 
 export default MyAccount;
+

@@ -8,7 +8,7 @@ function ShowRecipes(props) {
     const [currentRecipeImage, setCurrentRecipeImage] = useState('')
     // const [currentRecipeImage, setCurrentRecipeImage] = useState('')
     
-    let recipes = <p>Unable to load recipe data</p>
+    let recipes
 
     function setCurrentRecipeData(id, title, image) {
         setCurrentRecipeID(String(id))

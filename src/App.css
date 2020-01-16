@@ -17,7 +17,7 @@ body {
 
 .App {
   text-align: center;
-  background-color: #F1DDD2;
+  background-color: white;
   height: 2000px;
   
 }
@@ -58,7 +58,8 @@ body {
 }
 
 .links {
-  background-color: #dd9086;
+  font-family: 'futura';
+  background-color: #FD9185;
   padding: 10px;
   font-size: 12px;
   font-weight: 500;
@@ -78,5 +79,5 @@ label {
 }
 
 .header-bar {
-  background-color: #F1DDD2;;
+  background-color: white;
 }

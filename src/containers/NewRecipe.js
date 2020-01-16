@@ -58,27 +58,28 @@ function NewRecipe() {
       }
     }
 
+
     return(
         <div>
-            <Heading color={'#894532'} fontFamily={'Rubik'} fontWeight={'700'} fontSize={'35px'} mt={'50px'} mb={'50px'}>NEW RECIPE</Heading>
+            <Heading color={'#894532'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'35px'} mt={'50px'} mb={'50px'} letterSpacing={'3px'} >NEW RECIPE</Heading>
             <label>What's in your fridge? </label>
             <Flex>
                 <Box width={2/7}></Box>
                 <Input textAlign={'center'} mt={'10px'} width={3/7} onChange={(e) => setIngredient(e.target.value)}></Input>
                 <Box width={2/7}></Box>
             </Flex>
-            <Button fontFamily={'Roboto'} mt={'10px'} mb={'50px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => addToList()}>Enter Ingredient</Button>
+            <Button fontFamily={'futura'} fontWeight={'lighter'} mt={'10px'} mb={'50px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e) => addToList()}>ENTER INGREDIENT</Button>
             <Flex>
                 <Box width={1/17}></Box>
                 <Card width={7/17}>
-                    <Heading fontFamily={'Rubik'} fontWeight={'500'} my={'20px'}>INGREDIENTS</Heading>
+                    <Heading letterSpacing={'3px'} fontFamily={'futura'} fontWeight={'500'} my={'20px'}>INGREDIENTS</Heading>
                     <ShowIngredients ingredientsList={ingredientsList}/>
-                    <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => searchNewRecipe()}>Search</Button>
-                    <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => clearList()}>Clear</Button>
+                    <Button fontFamily={'futura'} fontWeight={'lighter'} width={'100px'} m={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e) => searchNewRecipe()}>SEARCH</Button>
+                    <Button fontFamily={'futura'} fontWeight={'lighter'} width={'100px'} m={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e) => clearList()}>CLEAR</Button>
                 </Card>
                 <Box width={1/17}></Box>
                 <Card width= {7/17}>
-                    <Heading fontFamily={'Rubik'} fontWeight={'500'} my={'20px'}>RECIPES</Heading>
+                    <Heading fontFamily={'futura'} letterSpacing={'3px'} fontWeight={'500'} my={'20px'}>RECIPES</Heading>
                     <ShowRecipes recipeData={recipeData}/>
                 </Card>
                 <Box width={1/17}></Box>

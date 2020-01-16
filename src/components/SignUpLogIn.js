@@ -16,12 +16,12 @@ function SignUpLogIn(props) {
 
     return(
         <div>
-            <Heading color={'#894532'} fontFamily={'Rubik'} fontWeight={'700'} fontSize={'35px'} my={'50px'} >WELCOME</Heading>
+            <Heading position={'absolute'} color={'white'} backgroundColor={'#FD9185'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'100px'} p={'100px'} letterSpacing={'3px'}>W E L C O M E</Heading>
             {newUser ? loginPage 
             :
             <div>
-            <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> setNewUser('existing')}>Log In</Button>
-            <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> setNewUser('new')}>Sign Up</Button>
+            <Button fontFamily={'futura'} fontWeight={'lighter'} width={'100px'} m={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=> setNewUser('existing')}>LOG IN</Button>
+            <Button fontFamily={'futura'} fontWeight={'lighter'} width={'100px'} m={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=> setNewUser('new')}>SIGN UP</Button>
             </div>
             }
         </div>

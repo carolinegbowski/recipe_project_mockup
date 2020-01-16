@@ -116,8 +116,8 @@ function OneRecipe(props) {
                         <Heading textAlign={'center'}>Instructions</Heading>
                         <p>{instructions}</p>
                     </Card>
-                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
-                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
+                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
+                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
                 </Box>
 
             </Card>

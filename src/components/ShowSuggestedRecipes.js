@@ -23,12 +23,12 @@ function ShowSuggestedRecipes(props) {
                 p : "10px",
                 m : "10px",
                 width: "1/5",
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
-                borderRadius: 4
+                fontFamily: 'futura',
+                borderStyle: 'solid',
+                borderWidth: '3px',
+                borderColor: '#FD9185'
             }}px={'10px'} width={1/5} key={recipeDict.id}>
-                <Image sx={{
-                    borderRadius: 4,
-                }} src={recipeDict.image} onClick={(e) => SetCurrentRecipeData(recipeDict.id, recipeDict.title, recipeDict.image)}/>
+                <Image src={recipeDict.image} onClick={(e) => SetCurrentRecipeData(recipeDict.id, recipeDict.title, recipeDict.image)}/>
                 <p>{ recipeDict.title }</p>
             </Card>
         ))

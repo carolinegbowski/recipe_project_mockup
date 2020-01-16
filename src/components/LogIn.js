@@ -39,7 +39,7 @@ function LogIn(props) {
 
     return(
         <div>
-            <Heading fontFamily={'Roboto'} my={'20px'}>Log In</Heading>
+            <Heading color={'#894532'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'35px'} mt={'20px'} mb={'10px'} letterSpacing={'3px'}>LOG IN</Heading>
             <Flex>
                 <Box width={3/7}></Box>
                 <Card mx={'5px'}>
@@ -52,7 +52,7 @@ function LogIn(props) {
                 </Card>
                 <Box width={3/7}></Box>
             </Flex>
-            <Button fontFamily={'Roboto'} width={'100px'} mt={'20px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=>checkCredentials()}>Log In</Button>
+            <Button fontFamily={'futura'} fontWeight={'lighter'} width={'100px'} m={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=>checkCredentials()}>LOG IN</Button>
         </div>
     )
 }
