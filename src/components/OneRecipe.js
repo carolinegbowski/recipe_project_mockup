@@ -93,23 +93,34 @@ function OneRecipe(props) {
 
     return(
         <div>
-            <Heading>{ props.recipeTitle }</Heading>
-            <Image src={ props.recipeImage }></Image>
-            <Box>
-                
-                <Card textAlign={'left'} contentAlign={'center'}>
-                    <Heading textAlign={'center'}>Ingredients</Heading>
-                    <Box width={'200px'} contentAlign={'center'}>
-                        <p>{ingredients}</p>
-                    </Box>
-                </Card>
-                <Card textAlign={'left'}>
-                    <Heading textAlign={'center'}>Instructions</Heading>
-                    <p>{instructions}</p>
-                </Card>
-                <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
-                <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
-            </Box>
+            <Card sx={{
+                backgroundColor: 'white',
+                px: '50px',
+                py: '30px',
+                borderRadius: 4
+            }} backgroundColor={'white'} px={'50px'} py={'30px'}> 
+                <Heading>{ props.recipeTitle }</Heading>
+                <Image sx={{
+                    py: '30px',
+                    borderRadius: 6,
+                    }} src={ props.recipeImage }></Image>
+                <Box>
+                    
+                    <Card textAlign={'left'} contentAlign={'center'}>
+                        <Heading textAlign={'center'}>Ingredients</Heading>
+                        <Box width={'200px'} contentAlign={'center'}>
+                            <p>{ingredients}</p>
+                        </Box>
+                    </Card>
+                    <Card textAlign={'left'}>
+                        <Heading textAlign={'center'}>Instructions</Heading>
+                        <p>{instructions}</p>
+                    </Card>
+                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
+                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
+                </Box>
+
+            </Card>
             
             
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'rebass';
+import { Card, Flex } from 'rebass';
 
 function ShowIngredients(props) {
     let iList = props.ingredientsList
@@ -8,9 +8,12 @@ function ShowIngredients(props) {
     ))
     return (
         <div>
-            <Card>
-                { myIngredients }
-            </Card>
+            <Flex justifyContent={'center'}>
+                <Card maxWidth={'200px'} minHeight={'100px'} textAlign={'left'} justifyContent={'left'}>
+                    { myIngredients }
+                </Card>
+            </Flex>
+           
             
         </div>
     )

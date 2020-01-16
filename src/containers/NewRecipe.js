@@ -64,7 +64,7 @@ function NewRecipe() {
             <label>What's in your fridge? </label>
             <Flex>
                 <Box width={2/7}></Box>
-                <Input mt={'10px'}width={3/7} onChange={(e) => setIngredient(e.target.value)}></Input>
+                <Input textAlign={'center'} mt={'10px'} width={3/7} onChange={(e) => setIngredient(e.target.value)}></Input>
                 <Box width={2/7}></Box>
             </Flex>
             <Button fontFamily={'Roboto'} mt={'10px'} mb={'50px'} backgroundColor={'#DD9086'} color={'white'} onClick={(e) => addToList()}>Enter Ingredient</Button>
