@@ -20,11 +20,6 @@ function Home() {
         [token]
     )
 
-    // let sessionToken = sessionStorage.getItem("token")
-    // if (sessionToken) {
-    //     setLoggedIn(true)
-    // }
-
     function logOut() {
         setToken('')
         }
@@ -32,7 +27,6 @@ function Home() {
     return(
         <div>
             {token ? <UserHomePage/> : <SignUpLogIn setToken={setToken}/>}
-            <Button fontFamily={'Roboto'} width={'100px'} m={'10px'} backgroundColor={'#DD9086'} color={'white'} onClick={e => logOut()}>Log Out</Button>
         </div>
     )
 }

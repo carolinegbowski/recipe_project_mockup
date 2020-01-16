@@ -21,9 +21,12 @@ function SignUp(props) {
             }
             const res = await fetch(endpoint, configs);
             const json_res = await res.json();
-            if (json_res.token) {
-                props.setNewUser(false)
+            if (json_res) {
+                sessionStorage.setItem("token", json_res[1])
+                sessionStorage.setItem("id", json_res[0])
+                props.setToken(json_res[1])
             }
+
         } catch (err) {
             console.log(err)
         }

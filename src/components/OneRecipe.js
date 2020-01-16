@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Heading, Card, Button, Box, Image } from 'rebass';
+import Modal from 'react-modal';
 
 function OneRecipe(props) {
     const [myIngredientsResponse, setMyIngredientsResponse] = useState({})
