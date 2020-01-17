@@ -31,7 +31,7 @@ function SuggestedRecipes() {
 
     return(
         <div>
-            <Heading color={'white'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'35px'} mt={'50px'} mb={'50px'} letterSpacing={'3px'} >SUGGESTED RECIPES</Heading>
+            <Heading color={'white'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'50px'} mt={'50px'} mb={'50px'} letterSpacing={'3px'} >SUGGESTED RECIPES</Heading>
             <ShowSuggestedRecipes recipeData={recipeData}/>
         </div>
     )

@@ -9,7 +9,7 @@ function ShowIngredients(props) {
     return (
         <div>
             <Flex justifyContent={'center'}>
-                <Card maxWidth={'200px'} minHeight={'100px'} textAlign={'left'} justifyContent={'left'}>
+                <Card maxWidth={'200px'} minHeight={'20px'} textAlign={'left'} justifyContent={'left'}>
                     { myIngredients }
                 </Card>
             </Flex>

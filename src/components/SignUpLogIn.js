@@ -25,7 +25,9 @@ function SignUpLogIn(props) {
         borderStyle: 'solid',
         borderColor: 'white',
         borderWidth: '2px',
-        borderRadius: '0px'
+        borderRadius: '0px',
+        outlineColor: 'white'
+
     }
     
     return(

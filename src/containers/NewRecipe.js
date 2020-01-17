@@ -75,11 +75,11 @@ function NewRecipe() {
 
     return(
         <div>
-            <Heading color={'white'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'35px'} mt={'50px'} mb={'50px'} letterSpacing={'15px'} >NEW RECIPE</Heading>
+            <Heading color={'white'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'50px'} mt={'50px'} mb={'50px'} letterSpacing={'15px'} >NEW RECIPE</Heading>
             <label>What's in your fridge? </label>
             <Flex>
                 <Box width={2/7}></Box>
-                <Input textAlign={'center'} mt={'10px'} width={3/7} onChange={(e) => setIngredient(e.target.value)}></Input>
+                <Input outline={'none'} textAlign={'center'} mt={'10px'} width={3/7} onChange={(e) => setIngredient(e.target.value)}></Input>
                 <Box width={2/7}></Box>
             </Flex>
             <Button style={buttonStyles} onClick={(e) => addToList()}>ENTER INGREDIENT</Button>

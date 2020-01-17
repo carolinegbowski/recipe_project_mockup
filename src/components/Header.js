@@ -13,7 +13,7 @@ const Header = () => {
                 <Flex justifyContent={'center'} py={'30px'}>
                     <Image width={1/30} src={Logo2}/>
                     <Box width={1/7}></Box>
-                    <Heading fontFamily={'Futura'} letterSpacing={'3px'} fontWeight={'bold'} color={'#FD9185'} width={3/7}>G R A P E F R U I T</Heading>
+                    <Heading fontSize={'28px'} fontFamily={'Futura'} letterSpacing={'3px'} fontWeight={'bold'} color={'#FD9185'} width={3/7}>G R A P E F R U I T</Heading>
                     <Box width={1/7}></Box>
                     <Image width={1/30} src={UserLogo2}/>
                 </Flex>
