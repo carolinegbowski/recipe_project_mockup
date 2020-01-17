@@ -36,10 +36,23 @@ function LogIn(props) {
         } 
     }
 
+    const buttonStyles = {
+        fontFamily: 'futura',
+        fontWeight: 'lighter',
+        width: '105px',
+        margin: '20px',
+        px: '20px',
+        backgroundColor: '#FD9185',
+        color: 'white',
+        borderStyle: 'solid',
+        borderColor: 'white',
+        borderWidth: '2px',
+        borderRadius: '0px'
+    }
 
     return(
         <div>
-            <Heading color={'#894532'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'35px'} mt={'20px'} mb={'10px'} letterSpacing={'3px'}>LOG IN</Heading>
+            <Heading color={'#894532'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'35px'} mt={'0px'} mb={'10px'} letterSpacing={'3px'}>LOG IN</Heading>
             <Flex>
                 <Box width={3/7}></Box>
                 <Card mx={'5px'}>
@@ -52,7 +65,7 @@ function LogIn(props) {
                 </Card>
                 <Box width={3/7}></Box>
             </Flex>
-            <Button fontFamily={'futura'} fontWeight={'lighter'} width={'100px'} m={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=>checkCredentials()}>LOG IN</Button>
+            <Button style={buttonStyles} onClick={(e)=>checkCredentials()}>LOG IN</Button>
         </div>
     )
 }
