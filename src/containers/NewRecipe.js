@@ -75,7 +75,7 @@ function NewRecipe() {
 
     return(
         <div>
-            <Heading color={'white'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'50px'} mt={'50px'} mb={'50px'} letterSpacing={'15px'} >NEW RECIPE</Heading>
+            <Heading color={'white'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'50px'} mt={'50px'} mb={'50px'} letterSpacing={'3px'} >NEW RECIPE</Heading>
             <label>What's in your fridge? </label>
             <Flex>
                 <Box width={2/7}></Box>

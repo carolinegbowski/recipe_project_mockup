@@ -24,14 +24,25 @@ function ShowSuggestedRecipes(props) {
                 p : "10px",
                 m : "10px",
                 width: "1/5",
-                minHeight: '300px',
+                height: '350px',
                 fontFamily: 'futura',
                 backgroundColor: 'white',
                 color: '#FD9185',
                 boxShadow: '0 2px 5px rgba(0, 0, 0, 0.25)'
             }}px={'10px'} width={1/5} key={recipeDict.id}>
-                <Card sx={{ justifyContent: 'center', contetnAlign: 'center', backgroundColor: '#FD9185', p: '1px', minHeight: '300px'}}>
-                    <Card sx={{backgroundColor: 'white', color: '#FD9185', padding: '5px', minHeight: '300px'}}>
+                <Card sx={{ 
+                    justifyContent: 'center', 
+                    contetnAlign: 'center', 
+                    backgroundColor: '#FD9185', 
+                    p: '1px', 
+                    height: '330px'
+                    }}>
+                    <Card sx={{
+                        backgroundColor: 'white', 
+                        color: '#FD9185', 
+                        padding: '5px', 
+                        height: '328px'
+                        }}>
                         <Image p={'5px'} src={recipeDict.image} onClick={(e) => SetCurrentRecipeData(recipeDict.id, recipeDict.title, recipeDict.image)}/>
                         <p class='recipe-titles'>{ recipeDict.title }</p>
                     </Card>

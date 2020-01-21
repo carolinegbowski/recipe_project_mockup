@@ -91,35 +91,64 @@ function OneRecipe(props) {
         }
     }
 
+    // find a way to conditionally render save button OR unsave button to remove from saved recipes
+
+    const buttonStyles = {
+        fontFamily: 'futura',
+        fontWeight: 'lighter',
+        width: '115 px',
+        margin: '20px',
+        px: '20px',
+        backgroundColor: 'white',
+        color: '#FD9185',
+        borderStyle: 'solid',
+        borderColor: '#FD9185',
+        borderWidth: '2px',
+        borderRadius: '0px',
+        outlineColor: '#FD9185'
+    }
+
     return(
         <div>
             <Card sx={{
+                justifyContent: "center",
+                width: '600px',
+                contentAlign: "center",
+                p: '15px',
                 backgroundColor: 'white',
-                px: '50px',
-                py: '30px',
-                borderRadius: 4
-            }} backgroundColor={'white'} px={'50px'} py={'30px'}> 
-                <Heading>{ props.recipeTitle }</Heading>
-                <Image sx={{
-                    py: '30px',
-                    borderRadius: 6,
-                    }} src={ props.recipeImage }></Image>
-                <Box>
-                    
-                    <Card textAlign={'left'} contentAlign={'center'}>
-                        <Heading textAlign={'center'}>Ingredients</Heading>
-                        <Box width={'200px'} contentAlign={'center'}>
-                            <p>{ingredients}</p>
+                color: '#FD9185',
+                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.25)'
+            }}> 
+                <Card sx={{ 
+                    justifyContent: 'center', 
+                    contetnAlign: 'center', 
+                    backgroundColor: '#FD9185', 
+                    px: '1px',
+                    py: '1px'
+                    }}> 
+                    <Card sx={{
+                        backgroundColor: 'white', 
+                        color: '#FD9185', 
+                        padding: '5px'
+                        }}>
+                        <Heading fontFamily={'futura'} fontWeight={'lighter'} mt={'10px'} mx={'40px'} >{ props.recipeTitle }</Heading>
+                        <Image p={'30px'} src={ props.recipeImage }></Image>
+                        <Box>
+                            <Card textAlign={'left'} contentAlign={'center'} mx={'40px'}>
+                                <Heading fontFamily={'futura'} fontWeight={'lighter'} letterSpacing={'3px'} textAlign={'center'}>INGREDIENTS</Heading>
+                                <Box width={'200px'} contentAlign={'center'}>
+                                    <p>{ingredients}</p>
+                                </Box>
+                            </Card>
+                            <Card textAlign={'left'} mx={'40px'}>
+                                <Heading fontFamily={'futura'} fontWeight={'lighter'} letterSpacing={'3px'} textAlign={'center'} >INSTRUCTIONS</Heading>
+                                <p>{instructions}</p>
+                            </Card>
+                            <Button style={buttonStyles} width={'140px'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
+                            <Button style={buttonStyles} width={'140px'}  onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
                         </Box>
                     </Card>
-                    <Card textAlign={'left'}>
-                        <Heading textAlign={'center'}>Instructions</Heading>
-                        <p>{instructions}</p>
-                    </Card>
-                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
-                    <Button contentAlign={'center'} mx={'10px'} my={'10px'} backgroundColor={'#FD9185'} color={'white'} onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
-                </Box>
-
+                </Card> 
             </Card>
             
             

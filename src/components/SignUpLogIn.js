@@ -17,7 +17,7 @@ function SignUpLogIn(props) {
     const buttonStyles = {
         fontFamily: 'futura',
         fontWeight: 'lighter',
-        width: '105px',
+        width: '115 px',
         margin: '20px',
         px: '20px',
         backgroundColor: '#FD9185',
@@ -32,7 +32,7 @@ function SignUpLogIn(props) {
     
     return(
         <div>
-            <Heading position={'absolute'} color={'white'} backgroundColor={'#FD9185'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'100px'} p={'100px'} letterSpacing={'3px'}>W E L C O M E</Heading>
+            <Heading position={'absolute'} color={'white'} backgroundColor={'#FD9185'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'150px'}  p={'100px'} letterSpacing={'3px'}>W E L C O M E</Heading>
             {newUser ? loginPage 
             :
             <div>
