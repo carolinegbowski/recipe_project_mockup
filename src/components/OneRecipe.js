@@ -130,12 +130,13 @@ function OneRecipe(props) {
     }
     
     let myButton
-    if (props.from === 'popularRecipes') {
+    if (props.from === 'popularRecipes' || 'recipes') {
         myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
     }
     if (props.from === 'myRecipes') {
         myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>unsaveRecipe()}>Unsave Recipe</Button>
     }
+
 
     return(
         <div>
