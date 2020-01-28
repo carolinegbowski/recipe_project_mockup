@@ -37,8 +37,8 @@ const PopupContainer = (props) => {
     let popup = (
         <div style={popupStyles} >
             <button style={popupCloseButtonStyles} onClick={props.onClose}>x</button>
-            <Flex contentAlign='center' justifyContent='center' paddingTop='150px' >
-                <OneRecipe onClose={props.onClose} setCurrentRecipeID={props.setCurrentRecipeID} recipeID={props.recipeID} recipeTitle={props.recipeTitle} recipeImage={props.recipeImage}/>
+            <Flex contentAlign='center' justifyContent='center' paddingTop='150px' paddingBottom='250px' >
+                <OneRecipe from={props.from} onClose={props.onClose} setCurrentRecipeID={props.setCurrentRecipeID} recipeID={props.recipeID} recipeTitle={props.recipeTitle} recipeImage={props.recipeImage}/>
             </Flex>
         </div>
     )

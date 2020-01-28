@@ -90,6 +90,28 @@ function OneRecipe(props) {
         }
     }
 
+    async function unsaveRecipe() {
+        let accountID = sessionStorage.getItem("id")
+        try {
+            const endpoint = 'http://localhost:5000/api/unsaveRecipe';
+            const data = {
+                recipeID : props.recipeID,
+                accountID : accountID
+            }
+            const configs = {
+                method: 'POST',
+                body: JSON.stringify(data),
+                mode: 'cors',
+                headers: {'Content-type' : 'application/json'}
+            }
+            const res = await fetch(endpoint, configs);
+            const json_res = await res.json();
+            setMyInstructionsResponse(json_res)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     // find a way to conditionally render save button OR unsave button to remove from saved recipes
 
     const buttonStyles = {
@@ -105,6 +127,14 @@ function OneRecipe(props) {
         borderWidth: '2px',
         borderRadius: '0px',
         outlineColor: '#FD9185'
+    }
+    
+    let myButton
+    if (props.from === 'popularRecipes') {
+        myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
+    }
+    if (props.from === 'myRecipes') {
+        myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>unsaveRecipe()}>Unsave Recipe</Button>
     }
 
     return(
@@ -143,8 +173,7 @@ function OneRecipe(props) {
                                 <Heading fontFamily={'futura'} fontWeight={'lighter'} letterSpacing={'3px'} textAlign={'center'} >INSTRUCTIONS</Heading>
                                 <p>{instructions}</p>
                             </Card>
-                            <Button style={buttonStyles} width={'140px'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
-                            <Button style={buttonStyles} width={'140px'}  onClick={(e)=> props.setCurrentRecipeID('')} >Go Back</Button>
+                            {myButton}
                         </Box>
                     </Card>
                 </Card> 
