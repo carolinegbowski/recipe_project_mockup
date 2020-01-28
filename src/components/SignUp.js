@@ -35,7 +35,7 @@ function SignUp(props) {
     const buttonStyles = {
         fontFamily: 'futura',
         fontWeight: 'lighter',
-        width: '105px',
+        width: '120px',
         margin: '20px',
         px: '20px',
         backgroundColor: '#FD9185',
@@ -59,7 +59,7 @@ function SignUp(props) {
                 </Card>
                 <Card mx={'5px'}>
                     <p>Password</p>
-                    <Input onChange={(e)=> setPassword(String(e.target.value))}></Input>
+                    <Input type='password' onChange={(e)=> setPassword(String(e.target.value))}></Input>
                 </Card>
                 <Box width={3/7}></Box>
             </Flex>

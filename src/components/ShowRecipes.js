@@ -6,7 +6,6 @@ function ShowRecipes(props) {
     const [currentRecipeID, setCurrentRecipeID] = useState('')
     const [currentRecipeTitle, setCurrentRecipeTitle] = useState('')
     const [currentRecipeImage, setCurrentRecipeImage] = useState('')
-    // const [currentRecipeImage, setCurrentRecipeImage] = useState('')
     
     let recipes
 

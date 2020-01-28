@@ -8,8 +8,6 @@ function UserHomepage() {
             <Heading position={'absolute'} color={'white'} backgroundColor={'#FD9185'} fontFamily={'futura'} fontWeight={'bold'} fontSize={'150px'} pt={'100px'} letterSpacing={'3px'}>W E L C O M E</Heading>
             <Image src={Grapefruit} position={'relative'}/>
             
-            <p>Some recipe news? </p>
-            <p>Some suggested recipes?</p>
         </div>
     )
 }

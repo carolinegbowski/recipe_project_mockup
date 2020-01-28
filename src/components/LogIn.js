@@ -63,7 +63,7 @@ function LogIn(props) {
                 </Card>
                 <Card mx={'5px'}>
                     <p>Password</p>
-                    <Input onChange={(e)=>setPassword(String(e.target.value))}></Input>
+                    <Input type='password' onChange={(e)=>setPassword(String(e.target.value))}></Input>
                 </Card>
                 <Box width={3/7}></Box>
             </Flex>

@@ -20,10 +20,10 @@ const Header = () => {
             </div>
             <div class="links">
                 <Link to='/home'>HOME</Link>
-                <Link to='/myAccount'>MY ACCOUNT</Link>
+                {/* <Link to='/myAccount'>MY ACCOUNT</Link> */}
                 <Link to='/newRecipe'>NEW RECIPE</Link>
                 <Link to='/myRecipes'>MY RECIPES</Link>
-                <Link to='/suggestedRecipes'>SUGGESTED RECIPES</Link>
+                <Link to='/suggestedRecipes'>POPULAR RECIPES</Link>
             </div>
         </div>
     )
