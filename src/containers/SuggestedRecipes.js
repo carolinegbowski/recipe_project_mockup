@@ -10,7 +10,7 @@ function SuggestedRecipes() {
         try {
             const endpoint = 'http://localhost:5000/api/popularRecipes';
             const data = {
-            number: 15
+            number: 16
             }
             const configs = {
             method: 'POST',

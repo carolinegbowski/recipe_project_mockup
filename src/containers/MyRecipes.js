@@ -5,7 +5,6 @@ import ShowMyRecipes from '../components/ShowMyRecipes';
 function MyRecipes() {
     const [recipeData, setRecipeData] = useState([])
     let id = sessionStorage.getItem('id')
-    console.log("Id = " + id)
 
     let errorNote
     async function getMyRecipes(id) {
@@ -34,7 +33,6 @@ function MyRecipes() {
 
     if (recipeData.length === 0) { 
         getMyRecipes(id)
-        console.log("My Recipes " + recipeData)
     }
 
     return(

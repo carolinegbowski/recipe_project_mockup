@@ -4,8 +4,8 @@ import OneRecipe from './OneRecipe';
 
 function ShowSuggestedRecipes(props) {
     const [currentRecipeID, setCurrentRecipeID] = useState('')
-    const [currentRecipeImage, setCurrentRecipeImage] = useState('')
     const [currentRecipeTitle, setCurrentRecipeTitle] = useState('')
+    const [currentRecipeImage, setCurrentRecipeImage] = useState('')
     
     function SetCurrentRecipeData(id, title, image) {
         setCurrentRecipeID(id)

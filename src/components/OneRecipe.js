@@ -149,9 +149,6 @@ function OneRecipe(props) {
                     </Card>
                 </Card> 
             </Card>
-            
-            
-
         </div>
     )
 }
