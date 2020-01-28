@@ -4,10 +4,10 @@ import { Flex } from 'rebass';
 
 let popupStyles = {
     width: '100%',
-    height: '100%',
+    maxHeight: '100%',
     margin: '0 auto',
     padding: '20px',
-    position: 'absolute',
+    position: 'fixed',
     marginTop: '200px',
     top: '200px',
     left: '50%',
@@ -17,7 +17,8 @@ let popupStyles = {
     color: 'white',
     fontFamily: 'futura',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    overflow: 'scroll'
 };
 
 let popupCloseButtonStyles = {
@@ -36,7 +37,7 @@ const PopupContainer = (props) => {
     let popup = (
         <div style={popupStyles} >
             <button style={popupCloseButtonStyles} onClick={props.onClose}>x</button>
-            <Flex contentAlign='center' justifyContent='center' paddingTop='150px'>
+            <Flex contentAlign='center' justifyContent='center' paddingTop='150px' >
                 <OneRecipe onClose={props.onClose} setCurrentRecipeID={props.setCurrentRecipeID} recipeID={props.recipeID} recipeTitle={props.recipeTitle} recipeImage={props.recipeImage}/>
             </Flex>
         </div>
