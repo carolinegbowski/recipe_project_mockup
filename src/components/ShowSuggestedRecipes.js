@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { Card, Image, Flex, Box } from 'rebass';
+import { Card, Image, Heading, Flex, Box} from 'rebass';
 import OneRecipe from './OneRecipe';
+import PopupRecipe from './PopupRecipe';
 
 function ShowSuggestedRecipes(props) {
     const [currentRecipeID, setCurrentRecipeID] = useState('')
     const [currentRecipeTitle, setCurrentRecipeTitle] = useState('')
     const [currentRecipeImage, setCurrentRecipeImage] = useState('')
+    const [isOpen, setIsOpen] = useState(false)
     
     function SetCurrentRecipeData(id, title, image) {
         setCurrentRecipeID(id)
         setCurrentRecipeTitle(title)
         setCurrentRecipeImage(image)
+        setIsOpen(true)
     }
     
     console.log(props.recipeData)
@@ -53,17 +56,21 @@ function ShowSuggestedRecipes(props) {
     
     return (
         <div>
-            { currentRecipeID ? 
+            {/* { currentRecipeID ? 
                 (<Flex contentAlign={'center'}>
                     <Card contentAlign={'center'} width={2/7}>
                         <OneRecipe setCurrentRecipeID={setCurrentRecipeID} recipeID={currentRecipeID} recipeTitle={currentRecipeTitle} recipeImage={currentRecipeImage}/>
                     </Card>
                 </Flex>)
                 : <p></p>
-            }
+            } */}
+
             <Flex flexWrap="wrap" justifyContent={'center'}>
                 { recipes } 
             </Flex>
+            <PopupRecipe isOpen={isOpen} setIsOpen={setIsOpen} setCurrentRecipeID={setCurrentRecipeID} recipeID={currentRecipeID} recipeTitle={currentRecipeTitle} recipeImage={currentRecipeImage} onClose={(e) => setIsOpen(false)}>
+                <OneRecipe setCurrentRecipeID={setCurrentRecipeID} recipeID={currentRecipeID} recipeTitle={currentRecipeTitle} recipeImage={currentRecipeImage}/>   
+            </PopupRecipe>
         </div>
     )
 }

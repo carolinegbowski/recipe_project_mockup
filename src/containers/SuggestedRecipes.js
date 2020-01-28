@@ -4,6 +4,7 @@ import ShowSuggestedRecipes from '../components/ShowSuggestedRecipes'
 
 function SuggestedRecipes() {
     const [recipeData, setRecipeData] = useState([])
+
     
 
     async function popularRecipes() {

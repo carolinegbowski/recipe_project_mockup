@@ -116,7 +116,7 @@ function OneRecipe(props) {
                 p: '15px',
                 backgroundColor: 'white',
                 color: '#FD9185',
-                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.25)'
+                // boxShadow: '0 2px 5px rgba(0, 0, 0, 0.25)'
             }}> 
                 <Card sx={{ 
                     justifyContent: 'center', 
