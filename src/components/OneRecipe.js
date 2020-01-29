@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import { Heading, Card, Button, Box, Image, Text } from 'rebass';
+import { Heading, Card, Button, Box, Image, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
 function OneRecipe(props) {
     const [myIngredientsResponse, setMyIngredientsResponse] = useState({})
     const [myInstructionsResponse, setMyInstructionsResponse] = useState({})
+    const [metric, setMetric] = useState(false)
     const [scale, setScale] = useState(1)
 
 
@@ -29,9 +30,15 @@ function OneRecipe(props) {
     let ingredients
     if (myIngredientsResponse.hasOwnProperty("data")) {
         let myIngredients = myIngredientsResponse["data"]["ingredients"]
-        ingredients = myIngredients.map((responseDict) => (
-            <li>{scale * responseDict.amount.us.value} {responseDict.amount.us.unit} {responseDict.name} </li>
-        ))
+        if (metric === true) {
+            ingredients = myIngredients.map((responseDict) => (
+                <li>{scale * responseDict.amount.metric.value} {responseDict.amount.metric.unit} {responseDict.name} </li>
+            ))
+        } else {
+            ingredients = myIngredients.map((responseDict) => (
+                <li>{scale * responseDict.amount.us.value} {responseDict.amount.us.unit} {responseDict.name} </li>
+            ))
+        }
     } else {
         ingredients = <p>Loading</p>
         getIngredients()
@@ -130,6 +137,19 @@ function OneRecipe(props) {
         borderRadius: '0px',
         outlineColor: '#FD9185'
     }
+    const metricButtonStyle = {
+        fontFamily: 'futura',
+        fontWeight: 'lighter',
+        width: '150 px',
+        backgroundColor: 'white',
+        color: '#FD9185',
+        fontSize: '14px',
+        borderStyle: 'solid',
+        borderColor: '#FD9185',
+        borderWidth: '2px',
+        borderRadius: '0px',
+        outlineColor: '#FD9185'
+    }
     
     let myButton
     if (props.from === 'popularRecipes' || 'recipes') {
@@ -137,6 +157,13 @@ function OneRecipe(props) {
     }
     if (props.from === 'myRecipes') {
         myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>unsaveRecipe()}>Unsave Recipe</Button>
+    }
+
+    let metricButton
+    if (metric === true) {
+        metricButton = <Button style={metricButtonStyle} onClick={(e)=>setMetric(false)}>US</Button> 
+    } else {
+        metricButton = <Button style={metricButtonStyle}  onClick={(e)=>setMetric(true)}>Metric</Button>
     }
 
 
@@ -168,21 +195,28 @@ function OneRecipe(props) {
                         <Box>
                             <Card textAlign={'left'} contentAlign={'center'} mx={'40px'}>
                                 <Heading fontFamily={'futura'} fontWeight={'lighter'} letterSpacing={'3px'} textAlign={'center'}>INGREDIENTS</Heading>
-                                <label>
-                                Scale this recipe:  
-                                <select onChange={(e)=>setScale(e.target.value)}>
-                                    <option value="0.25">1/4</option>
-                                    <option value="0.3333">1/3</option>
-                                    <option value="0.5">1/2</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                                </label>
+                                <Flex contentAlign={'center'} justifyContent={'center'} paddingTop={'20px'}>
+                                    <Box width={1/2}>
+                                        <label>
+                                            Scale Recipe: 
+                                        <select onChange={(e)=>setScale(e.target.value)}>
+                                            <option value="0.25">1/4</option>
+                                            <option value="0.3333">1/3</option>
+                                            <option value="0.5">1/2</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                        </label>
+                                    </Box>
+                                    
+                                    { metricButton }
+                                </Flex>
                                 <Box width={'200px'} contentAlign={'center'}>
                                     <p>{ingredients}</p>
                                 </Box>
+                                
                             </Card>
                             <Card textAlign={'left'} mx={'40px'}>
                                 <Heading fontFamily={'futura'} fontWeight={'lighter'} letterSpacing={'3px'} textAlign={'center'} >INSTRUCTIONS</Heading>
