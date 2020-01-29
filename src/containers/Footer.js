@@ -4,9 +4,9 @@ import { Card } from 'rebass';
 function Footer() {
     return(
         <div>
-            <Card minHeight={'50px'} backgroundColor={'#dd9086'}>
-
-            </Card>
+            <footer>
+                
+            </footer>
         </div>
     )
 }
