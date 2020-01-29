@@ -156,7 +156,7 @@ function OneRecipe(props) {
         myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>saveRecipe()}>Save Recipe</Button>
     }
     if (props.from === 'myRecipes') {
-        myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>unsaveRecipe()}>Unsave Recipe</Button>
+        myButton = <Button style={buttonStyles} width={'140px'} onClick={(e)=>unsaveRecipe()}>Delete</Button>
     }
 
     let metricButton
@@ -190,7 +190,7 @@ function OneRecipe(props) {
                         color: '#FD9185', 
                         padding: '5px'
                         }}>
-                        <Heading fontFamily={'futura'} fontWeight={'lighter'} mt={'10px'} mx={'40px'} >{ props.recipeTitle }</Heading>
+                        <Heading fontFamily={'futura'} fontSize={'30px'} fontWeight={'lighter'} mt={'10px'} mx={'40px'} >{ props.recipeTitle }</Heading>
                         <Image p={'30px'} src={ props.recipeImage }></Image>
                         <Box>
                             <Card textAlign={'left'} contentAlign={'center'} mx={'40px'}>
@@ -213,7 +213,7 @@ function OneRecipe(props) {
                                     
                                     { metricButton }
                                 </Flex>
-                                <Box width={'200px'} contentAlign={'center'}>
+                                <Box width={'600px'} contentAlign={'center'}>
                                     <p>{ingredients}</p>
                                 </Box>
                                 

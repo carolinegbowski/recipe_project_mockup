@@ -8,7 +8,7 @@ import { Label, Input } from '@rebass/forms';
 function NewRecipe() {
     const [ingredient, setIngredient] = useState('')
     const [ingredientsList, setIngredientsList] = useState([])
-    const [recipeData, setRecipeData] = useState([])
+    const [recipeData, setRecipeData] = useState(null)
 
     function addToList() {
         let newIngredient = ingredient
@@ -95,7 +95,7 @@ function NewRecipe() {
                 <Box width={1/17}></Box>
                 <Card width= {7/17}>
                     <Heading fontFamily={'futura'} letterSpacing={'3px'} fontWeight={'500'} my={'20px'} color={'white'}>RECIPES</Heading>
-                    <ShowRecipes recipeData={recipeData}/>
+                    {recipeData ? <ShowRecipes recipeData={recipeData}/> : <p>Enter ingredients and click SEARCH </p>}
                 </Card>
                 <Box width={1/17}></Box>
             </Flex>
