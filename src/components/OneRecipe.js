@@ -86,7 +86,7 @@ function OneRecipe(props) {
             }
             const res = await fetch(endpoint, configs);
             const json_res = await res.json();
-            setMyInstructionsResponse(json_res)
+            
         } catch (err) {
             console.log(err)
         }
@@ -108,7 +108,7 @@ function OneRecipe(props) {
             }
             const res = await fetch(endpoint, configs);
             const json_res = await res.json();
-            setMyInstructionsResponse(json_res)
+            // setMyInstructionsResponse(json_res)
         } catch (err) {
             console.log(err)
         }
@@ -169,10 +169,10 @@ function OneRecipe(props) {
                             <Card textAlign={'left'} contentAlign={'center'} mx={'40px'}>
                                 <Heading fontFamily={'futura'} fontWeight={'lighter'} letterSpacing={'3px'} textAlign={'center'}>INGREDIENTS</Heading>
                                 <label>
-                                Scale this recipe: 
+                                Scale this recipe:  
                                 <select onChange={(e)=>setScale(e.target.value)}>
                                     <option value="0.25">1/4</option>
-                                    <option value="0.3333333333">1/3</option>
+                                    <option value="0.3333">1/3</option>
                                     <option value="0.5">1/2</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
