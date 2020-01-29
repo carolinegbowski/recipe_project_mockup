@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import { Heading, Card, Button, Box, Image } from 'rebass';
+import { Heading, Card, Button, Box, Image, Text } from 'rebass';
+import { Input } from '@rebass/forms';
 
 function OneRecipe(props) {
     const [myIngredientsResponse, setMyIngredientsResponse] = useState({})
     const [myInstructionsResponse, setMyInstructionsResponse] = useState({})
+    const [scale, setScale] = useState(1)
 
 
     async function getIngredients() {
@@ -28,7 +30,7 @@ function OneRecipe(props) {
     if (myIngredientsResponse.hasOwnProperty("data")) {
         let myIngredients = myIngredientsResponse["data"]["ingredients"]
         ingredients = myIngredients.map((responseDict) => (
-            <li>{responseDict.amount.us.value} {responseDict.amount.us.unit} {responseDict.name} </li>
+            <li>{scale * responseDict.amount.us.value} {responseDict.amount.us.unit} {responseDict.name} </li>
         ))
     } else {
         ingredients = <p>Loading</p>
@@ -166,6 +168,18 @@ function OneRecipe(props) {
                         <Box>
                             <Card textAlign={'left'} contentAlign={'center'} mx={'40px'}>
                                 <Heading fontFamily={'futura'} fontWeight={'lighter'} letterSpacing={'3px'} textAlign={'center'}>INGREDIENTS</Heading>
+                                <label>
+                                Scale this recipe: 
+                                <select onChange={(e)=>setScale(e.target.value)}>
+                                    <option value="0.25">1/4</option>
+                                    <option value="0.3333333333">1/3</option>
+                                    <option value="0.5">1/2</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                </label>
                                 <Box width={'200px'} contentAlign={'center'}>
                                     <p>{ingredients}</p>
                                 </Box>
