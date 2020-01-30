@@ -32,7 +32,7 @@ function OneRecipe(props) {
         let myIngredients = myIngredientsResponse["data"]["ingredients"]
         if (metric === true) {
             ingredients = myIngredients.map((responseDict) => (
-                <li>{scale * responseDict.amount.metric.value} {responseDict.amount.metric.unit} {responseDict.name} </li>
+                <li>{(scale * responseDict.amount.metric.value)} {responseDict.amount.metric.unit} {responseDict.name} </li>
             ))
         } else {
             ingredients = myIngredients.map((responseDict) => (
@@ -201,7 +201,7 @@ function OneRecipe(props) {
                                             Scale Recipe: 
                                         <select onChange={(e)=>setScale(e.target.value)}>
                                             <option value="0.25">1/4</option>
-                                            <option value="0.3333">1/3</option>
+                                            <option value="0.33">1/3</option>
                                             <option value="0.5">1/2</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
