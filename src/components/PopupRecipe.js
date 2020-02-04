@@ -4,6 +4,7 @@ import { Flex } from 'rebass';
 
 let popupStyles = {
     width: '100%',
+    height: '100%',
     maxHeight: '100%',
     margin: '0 auto',
     padding: '20px',
